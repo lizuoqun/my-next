@@ -11,8 +11,17 @@ const getData = async () => {
 export default async function Home() {
   const data = await getData();
   console.log(data);
-  return <div>
+  return <div className="border border-black rounded-lg p-4">
     <h1>About</h1>
     <Link href="/about/me">跳转到me</Link>
+    <div className="border border-black rounded-lg p-4">
+      <h2>路由跳转</h2>
+      <div className="flex flex-col">
+        <Link href={{pathname: '/about/me', query: {name: '张三'}}}>跳转并传参</Link>
+        {/*<Link href="/about" prefetch={true}>预获取page页面</Link>*/}
+        {/*<Link href="/about" scroll={true}>保持滚动位置</Link>*/}
+        {/*<Link href="/about" replace={true}>替换当前页面</Link>*/}
+      </div>
+    </div>
   </div>;
 }
