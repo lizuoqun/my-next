@@ -1,10 +1,10 @@
 'use client';
-import {useState, useRef, useEffect} from 'react';
+import {useState, useRef, useEffect, Suspense} from 'react';
 import {Button} from '@/components/ui/button';
 import {Textarea} from '@/components/ui/textarea';
 import {useChat} from '@ai-sdk/react';
 
-export default function HomePage() {
+export function ChatPage() {
     const [input, setInput] = useState(''); //输入框的值
     const messagesEndRef = useRef<HTMLDivElement>(null); //获取消息结束的ref
     //useChat 内部封装了流式响应 默认会向/api/chat 发送请求
@@ -30,7 +30,7 @@ export default function HomePage() {
 
     return (
         <div className='flex flex-col h-screen bg-linear-to-br from-blue-50 via-white to-purple-50'>
-            {/* 头部标题 */}
+            {/*头部标题*/}
             <div className='bg-white/80 backdrop-blur-sm shadow-sm border-b border-gray-200'>
                 <div className='max-w-4xl mx-auto px-6 py-4'>
                     <h1 className='text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
@@ -134,4 +134,10 @@ export default function HomePage() {
             </div>
         </div>
     );
+}
+
+export default function Page() {
+    return <Suspense fallback={<div>动态内容Loading...</div>}>
+        <ChatPage/>
+    </Suspense>
 }

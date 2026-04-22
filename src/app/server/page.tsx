@@ -1,7 +1,9 @@
 import fs from 'fs'
 import path from 'path'
+import {Suspense} from "react";
+import {NoCachePage} from "@/app/cache/strategy/page";
 
-export default async function ServerPage() {
+export async function ServerPage() {
     const filePath = path.join(process.cwd(), 'README.md')
     const content = await fs.promises.readFile(filePath, 'utf-8')
 
@@ -13,4 +15,10 @@ export default async function ServerPage() {
                 </pre>
         </div>
     )
+}
+
+export default function Page() {
+    return <Suspense fallback={<div>动态内容Loading...</div>}>
+        <ServerPage/>
+    </Suspense>
 }
