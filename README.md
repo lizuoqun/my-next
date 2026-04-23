@@ -13,3 +13,5 @@ This is My Next.js project. It's docs are [here](https://lizuoqun.github.io/My-P
 ## 缓存&缓存策略
 
 ## 内置组件
+
+## 静态导出SSG
