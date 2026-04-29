@@ -15,3 +15,9 @@ This is My Next.js project. It's docs are [here](https://lizuoqun.github.io/My-P
 ## 内置组件
 
 ## 静态导出SSG
+
+## Server Action
+
+## I18n
+
+## SEO
