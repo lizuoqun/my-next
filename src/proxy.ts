@@ -18,7 +18,7 @@ export async function proxy(request: NextRequest) {
 
 // 配置匹配路径
 export const config = {
-    matcher: '/api/:path*',
+    matcher: '/api/user/:path*',
     //matcher: ['/api/:path*','/api/user/:path*'], 支持单个以及多个路径匹配
     //matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'], 同样支持正则表达式匹配
 }

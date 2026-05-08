@@ -6,7 +6,6 @@ const withMDX = createMDX({
     extension: /\.(md|mdx)$/
 });
 const nextConfig: NextConfig = {
-    allowedDevOrigins: ['192.168.10.179'],
     /* config options here */
     reactCompiler: true,
     cacheComponents: true, // 启用缓存组件
